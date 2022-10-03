@@ -17,7 +17,8 @@ pipeline {
 				echo "Integration Test"
 			}
 		}
-	} post {
+	} 
+	post {
 		always {
 			echo "Always Executed"
 		}
@@ -25,7 +26,7 @@ pipeline {
 			echo "Only if successful"
 		}
 		failure {
-			echo "Onli if fails"
+			echo "Only if fails"
 		}
 	}
 }
