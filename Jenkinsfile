@@ -1,16 +1,18 @@
 // Declarative approach for Jernkins Job 
 pipeline {
-	// agent any
-	agent {
-		docker {
-			// image 'maven:3.6.3'
-			image 'node:13.8'
-		}
-	}
+	agent any
+	// agent {
+	// 	docker {
+	// 		// image 'maven:3.6.3'
+	// 		//image 'node:13.8'
+	// 	}
+	// }
 	stages{
 		stage('Build') {
 			steps {
-				sh "node --version"
+				// sh "node --version"
+				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
+				echo "$env.BUILD_ID"
 			}
 		}
 		stage('Test') {
